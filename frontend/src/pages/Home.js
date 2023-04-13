@@ -25,15 +25,15 @@ const Home = () => {
 				borderRadius="lg"
 				borderWidth="1px"
 			>
-				<Center fontSize="3xl" fontFamily="Work sans" color="black">
-					Chat
+				<Center fontSize="3xl" color="black">
+					Talkit
 				</Center>
 			</Box>
 			<Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
 				<Tabs isFitted variant="soft-rounded">
 					<TabList mb="1em">
-						<Tab>Login</Tab>
-						<Tab>Sign Up</Tab>
+						<Tab _selected={{ color: 'black', bg: 'blue.100' }}>Login</Tab>
+						<Tab _selected={{ color: 'black', bg: 'blue.100' }}>Sign Up</Tab>
 					</TabList>
 					<TabPanels>
 						<TabPanel>

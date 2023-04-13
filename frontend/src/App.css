@@ -3,8 +3,9 @@
 .App {
 	min-height: 100vh;
 	display: flex;
-	background-image: url('background.jpg');
+	background: #ebf8ff;
 	background-size: cover;
 	background-position: center;
 	color: black;
+	font-family: 'Work Sans';
 }

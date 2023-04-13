@@ -10,9 +10,7 @@ const Login = () => {
 	const [confirmPassword, setConfirmPassword] = useState();
 
 	const handleClick = () => setShow(!show);
-
 	const handleSubmit = () => {};
-
 	const postDetails = (pictures) => {};
 
 	return (
@@ -47,7 +45,7 @@ const Login = () => {
 				style={{ marginTop: 15 }}
 				onClick={handleSubmit}
 			>
-				Sign up
+				Login
 			</Button>
 		</VStack>
 	);
