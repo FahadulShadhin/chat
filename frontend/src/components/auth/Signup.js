@@ -62,7 +62,7 @@ const Signup = () => {
 				{ name, email, password, picture },
 				config
 			);
-			// console.log(response);
+
 			localStorage.setItem('userInfo', JSON.stringify(response));
 			toast({
 				title: 'Registration successfull',
