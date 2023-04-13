@@ -57,11 +57,13 @@ const Signup = () => {
 				},
 			};
 
-			const { data } = await axios.post(
+			const response = await axios.post(
 				'/api/user',
 				{ name, email, password, picture },
 				config
 			);
+			// console.log(response);
+			localStorage.setItem('userInfo', JSON.stringify(response));
 			toast({
 				title: 'Registration successfull',
 				status: 'success',
