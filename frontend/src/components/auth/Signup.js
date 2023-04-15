@@ -13,11 +13,11 @@ import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 const Signup = () => {
 	const [showPass, setShowPass] = useState(false);
 	const [showConfirmPass, setShowConfirmPass] = useState(false);
-	const [name, setName] = useState();
-	const [email, setEmail] = useState();
-	const [password, setPassword] = useState();
-	const [confirmPassword, setConfirmPassword] = useState();
-	const [picture, setPicture] = useState();
+	const [name, setName] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [confirmPassword, setConfirmPassword] = useState('');
+	const [picture, setPicture] = useState('');
 	const [loading, setLoading] = useState(false);
 	const toast = useToast();
 	const navigate = useNavigate();
@@ -73,7 +73,7 @@ const Signup = () => {
 			});
 
 			setLoading(false);
-			navigate('/');
+			navigate('/chats');
 		} catch (error) {
 			toast({
 				title: 'Error occured!',
