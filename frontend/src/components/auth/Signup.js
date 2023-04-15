@@ -137,28 +137,25 @@ const Signup = () => {
 
 	return (
 		<VStack spacing="5px">
-			<FormControl id="first-name" isRequired>
-				<FormLabel>Name</FormLabel>
+			<FormControl id="first-name" isRequired pb={5}>
 				<Input
-					placeholder="Enter your name"
+					placeholder="Username"
 					onChange={(event) => setName(event.target.value)}
 				/>
 			</FormControl>
 
-			<FormControl id="email" isRequired>
-				<FormLabel>Email</FormLabel>
+			<FormControl id="email" isRequired pb={5}>
 				<Input
-					placeholder="Enter your email"
+					placeholder="Email"
 					onChange={(event) => setEmail(event.target.value)}
 				/>
 			</FormControl>
 
-			<FormControl id="password" isRequired>
-				<FormLabel>Password</FormLabel>
+			<FormControl id="password" isRequired pb={5}>
 				<InputGroup>
 					<Input
 						type={showPass ? 'text' : 'password'}
-						placeholder="********"
+						placeholder="Password"
 						onChange={(event) => setPassword(event.target.value)}
 					/>
 					<InputRightElement width="4.5rem">
@@ -169,12 +166,11 @@ const Signup = () => {
 				</InputGroup>
 			</FormControl>
 
-			<FormControl id="confirm-password" isRequired>
-				<FormLabel>Confirm Password</FormLabel>
+			<FormControl id="confirm-password" isRequired pb={5}>
 				<InputGroup>
 					<Input
 						type={showConfirmPass ? 'text' : 'password'}
-						placeholder="********"
+						placeholder="Confirm Password"
 						onChange={(event) => setConfirmPassword(event.target.value)}
 					/>
 					<InputRightElement width="4.5rem">
@@ -185,8 +181,8 @@ const Signup = () => {
 				</InputGroup>
 			</FormControl>
 
-			<FormControl id="picture">
-				<FormLabel>Upload your picture</FormLabel>
+			<FormControl id="picture" pb={5}>
+				<FormLabel>Profile picture</FormLabel>
 				<Input
 					type="file"
 					p={1.5}
@@ -198,7 +194,6 @@ const Signup = () => {
 			<Button
 				colorScheme="blue"
 				width="100%"
-				style={{ marginTop: 15 }}
 				onClick={handleSubmit}
 				isLoading={loading}
 			>

@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import {
-	FormControl,
-	FormLabel,
-	VStack,
-	Button,
-	useToast,
-} from '@chakra-ui/react';
+import { FormControl, VStack, Button, useToast } from '@chakra-ui/react';
 import { Input, InputGroup, InputRightElement } from '@chakra-ui/input';
 
 const Login = () => {
@@ -72,23 +66,21 @@ const Login = () => {
 
 	return (
 		<VStack spacing="10px">
-			<FormControl id="email" isRequired>
-				<FormLabel>Email Address</FormLabel>
+			<FormControl id="email" isRequired pb={5}>
 				<Input
 					value={email}
 					type="email"
 					onChange={(event) => setEmail(event.target.value)}
-					placeholder="Enter Your Email Address"
+					placeholder="Email"
 				/>
 			</FormControl>
-			<FormControl id="password" isRequired>
-				<FormLabel>Password</FormLabel>
+			<FormControl id="password" isRequired pb={5}>
 				<InputGroup size="md">
 					<Input
 						value={password}
 						onChange={(event) => setPassword(event.target.value)}
 						type={show ? 'text' : 'password'}
-						placeholder="Enter password"
+						placeholder="Password"
 					/>
 					<InputRightElement width="4.5rem">
 						<Button h="1.75rem" size="sm" onClick={handlePassShowClick}>
@@ -100,7 +92,6 @@ const Login = () => {
 			<Button
 				colorScheme="blue"
 				width="100%"
-				style={{ marginTop: 15 }}
 				onClick={submitHandler}
 				isLoading={loading}
 			>
