@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FormControl, VStack, Button, useToast } from '@chakra-ui/react';
@@ -11,6 +11,7 @@ const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const toast = useToast();
 	const navigate = useNavigate();
+	const id = useId();
 
 	const handlePassShowClick = () => setShow(!show);
 
@@ -66,7 +67,7 @@ const Login = () => {
 
 	return (
 		<VStack spacing="5px">
-			<FormControl id="email" isRequired pb={5}>
+			<FormControl id={id + '-email'} isRequired pb={5}>
 				<Input
 					value={email}
 					type="email"
@@ -74,7 +75,7 @@ const Login = () => {
 					placeholder="Email"
 				/>
 			</FormControl>
-			<FormControl id="password" isRequired pb={5}>
+			<FormControl id={id + '-password'} isRequired pb={5}>
 				<InputGroup size="md">
 					<Input
 						value={password}

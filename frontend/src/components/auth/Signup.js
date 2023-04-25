@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
@@ -21,6 +21,7 @@ const Signup = () => {
 	const [loading, setLoading] = useState(false);
 	const toast = useToast();
 	const navigate = useNavigate();
+	const id = useId();
 
 	const handlePassShowClick = () => setShowPass(!showPass);
 	const handleConfirmPassShowClick = () => setShowConfirmPass(!showConfirmPass);
@@ -137,21 +138,21 @@ const Signup = () => {
 
 	return (
 		<VStack spacing="5px">
-			<FormControl id="first-name" isRequired pb={5}>
+			<FormControl id={id + '-username'} isRequired pb={5}>
 				<Input
 					placeholder="Username"
 					onChange={(event) => setName(event.target.value)}
 				/>
 			</FormControl>
 
-			<FormControl id="email" isRequired pb={5}>
+			<FormControl id={id + '-email'} isRequired pb={5}>
 				<Input
 					placeholder="Email"
 					onChange={(event) => setEmail(event.target.value)}
 				/>
 			</FormControl>
 
-			<FormControl id="password" isRequired pb={5}>
+			<FormControl id={id + '-password'} isRequired pb={5}>
 				<InputGroup>
 					<Input
 						type={showPass ? 'text' : 'password'}
@@ -166,7 +167,7 @@ const Signup = () => {
 				</InputGroup>
 			</FormControl>
 
-			<FormControl id="confirm-password" isRequired pb={5}>
+			<FormControl id={id + '-confirm-password'} isRequired pb={5}>
 				<InputGroup>
 					<Input
 						type={showConfirmPass ? 'text' : 'password'}
@@ -181,7 +182,7 @@ const Signup = () => {
 				</InputGroup>
 			</FormControl>
 
-			<FormControl id="picture" pb={5}>
+			<FormControl id={id + '-picture'} pb={5}>
 				<FormLabel>Profile picture</FormLabel>
 				<Input
 					type="file"
