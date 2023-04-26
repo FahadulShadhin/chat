@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
 	Container,
 	Box,
@@ -13,6 +14,16 @@ import Signup from '../components/auth/Signup';
 import Login from '../components/auth/Login';
 
 const Home = () => {
+	const navigate = useNavigate();
+
+	useEffect(() => {
+		const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+		if (userInfo) {
+			navigate('/chats');
+		}
+	}, [navigate]);
+
 	return (
 		<Container maxW="xl" centerContent>
 			<Box
@@ -26,7 +37,7 @@ const Home = () => {
 				borderWidth="1px"
 			>
 				<Center fontSize="3xl" color="black">
-					Talkit
+					CHAT
 				</Center>
 			</Box>
 			<Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">

@@ -1,4 +1,4 @@
-import React, { useState, useId } from 'react';
+import React, { useState, useId, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FormControl, VStack, Button, useToast } from '@chakra-ui/react';
@@ -41,7 +41,6 @@ const Login = () => {
 				{ email, password },
 				config
 			);
-			const token = data.token;
 			toast({
 				title: 'Login Successful',
 				status: 'success',
@@ -49,7 +48,7 @@ const Login = () => {
 				isClosable: true,
 				position: 'bottom',
 			});
-			localStorage.setItem('userInfo', JSON.stringify(token));
+			localStorage.setItem('userInfo', JSON.stringify(data));
 			setLoading(false);
 			navigate('/chats');
 		} catch (error) {
