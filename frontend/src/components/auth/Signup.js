@@ -66,7 +66,7 @@ const Signup = () => {
 
 			localStorage.setItem('userInfo', JSON.stringify(response));
 			toast({
-				title: 'Registration successfull',
+				title: 'Registration successfull, please login',
 				status: 'success',
 				duration: 5000,
 				isClosable: true,
@@ -74,7 +74,7 @@ const Signup = () => {
 			});
 
 			setLoading(false);
-			navigate('/chats');
+			navigate('/');
 		} catch (error) {
 			toast({
 				title: 'Error occured!',
