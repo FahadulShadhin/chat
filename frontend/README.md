@@ -1,1 +1,1 @@
-# talkit web app
+# chat web app
